@@ -19,7 +19,6 @@ def move_board(command):
     cols = len(board[0]) 
         
     if command == 'w':
-        print('Choose w')
         for j in range(cols):
             for _ in range(3):
                 for i in range(1, rows):
@@ -38,7 +37,6 @@ def move_board(command):
                     board[i][j] = 0
 
     elif command == 'a':
-        print('Choose a')
         for i in range(rows):
             for _ in range(3):
                 for j in range(1, cols):
@@ -56,8 +54,7 @@ def move_board(command):
                     board[i][j-1] = board[i][j]
                     board[i][j] = 0
 
-    elif command == 's':
-        print('Choose s')        
+    elif command == 's':   
         for j in range(cols):
             for _ in range(3):
                 for i in range(rows - 2, -1, -1):
@@ -75,8 +72,7 @@ def move_board(command):
                     board[i+1][j] = board[i][j]
                     board[i][j] = 0
                     
-    elif command == 'd':
-        print('Choose d')        
+    elif command == 'd':   
         for i in range(rows):
             for _ in range(3):
                 for j in range(cols - 2, -1, -1):
