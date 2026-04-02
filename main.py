@@ -110,7 +110,6 @@ def spawn():
     else :
         return
 
-
     board[spawn_x][spawn_y] = 2
 
 
