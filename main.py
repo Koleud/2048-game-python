@@ -97,9 +97,19 @@ def move_board(command):
 def spawn():
     spawn_x = -1
     spawn_y = -1
-    while board[spawn_x][spawn_y] != 0:
-        spawn_x = random.randint(0, 3)
-        spawn_y = random.randint(0, 3)
+    empty_box = []
+    for i in range(len(board)) :
+        for j in range(len(board[0])) :
+            if(board[i][j] == 0) :
+                empty_box.append([i,j])
+
+    if(empty_box) : 
+        spawning_coord = random.randint(0, len(empty_box)-1)
+        spawn_x = empty_box[spawning_coord][0]
+        spawn_y = empty_box[spawning_coord][1]
+    else :
+        return
+
 
     board[spawn_x][spawn_y] = 2
 
