@@ -91,13 +91,13 @@ def move_board(command):
                     board[i][j] = 0
     else :
         print('Wrong command. Use (w/a/s/d)!')
-        return
+        return -1
 
 
 def spawn():
     spawn_x = -1
     spawn_y = -1
-    while board[spawn_x][spawn_y] != 0 and spawn_x == -1 and spawn_y == -1:
+    while board[spawn_x][spawn_y] != 0:
         spawn_x = random.randint(0, 3)
         spawn_y = random.randint(0, 3)
 
@@ -107,6 +107,7 @@ def spawn():
 while True:   
     print_board()
     move = input('Enter move (w/a/s/d): ')
-    move_board(move)
-    spawn()
+    status = move_board(move)
+    if(status != -1) :
+        spawn()
 
